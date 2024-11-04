@@ -1,3 +1,4 @@
+// App.js
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -13,23 +14,25 @@ import NoPage from './pages/NoPage';
 
 function App() {
   return (
-   
-    <Router>
-      <Navigation />
-      <Routes>
-     
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/add-product" element={<AddProductForm />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/rate-us" element={<RateUs />} />
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Navigation />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/add-product" element={<AddProductForm />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/rate-us" element={<RateUs />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
