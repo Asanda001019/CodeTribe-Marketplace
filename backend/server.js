@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+
 const app = express();
 const PORT = 5000;
 
@@ -10,9 +11,12 @@ app.use(express.json()); // To parse JSON request bodies
 
 // Import routes
 const authRoutes = require('./routes/authRoutes.jsx'); 
+const productRoutes = require('./routes/productRoutes.jsx');
+
 
 // Use routes
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 // Test route to ensure server is running
 app.get('/', (req, res) => {
