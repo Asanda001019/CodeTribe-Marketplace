@@ -18,6 +18,7 @@ const productRoutes = require('./routes/productRoutes.jsx');
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
+
 // Test route to ensure server is running
 app.get('/', (req, res) => {
   res.send('Server is woking fine');

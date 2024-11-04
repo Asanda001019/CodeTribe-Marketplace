@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Navigation />
       <Routes>
-      <h1>Hello World</h1>
+     
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
