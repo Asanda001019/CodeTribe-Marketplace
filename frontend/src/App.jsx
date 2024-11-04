@@ -13,9 +13,11 @@ import NoPage from './pages/NoPage';
 
 function App() {
   return (
+   
     <Router>
       <Navigation />
       <Routes>
+      <h1>Hello World</h1>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
