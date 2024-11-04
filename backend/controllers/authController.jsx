@@ -1,5 +1,5 @@
-const admin = require('../config/firebaseConfig');
-const jwt = require('jsonwebtoken');
+// controllers/AuthControllers.js
+const admin = require('../config/firebaseConfig.jsx');
 
 const registerUser = async (req, res) => {
   const { email, password } = req.body;
@@ -17,9 +17,11 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
-    // Implement logic to verify password (using a database or Firebase Authentication)
+    // Use Firebase client SDK to sign in and get the token
+    // NOTE: You must handle this on the client side as the Admin SDK doesn't support direct login verification
     const userRecord = await admin.auth().getUserByEmail(email);
-    const token = jwt.sign({ uid: userRecord.uid }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = await admin.auth().createCustomToken(userRecord.uid);
+    
     res.status(200).json({ token });
   } catch (error) {
     res.status(400).json({ error: 'Invalid credentials' });

@@ -1,16 +1,9 @@
 // routes/authRoutes.js
 const express = require('express');
+const { registerUser, loginUser } = require('../controllers/authController.jsx');
 const router = express.Router();
 
-// Controller functions (import from controllers if needed)
-router.post('/register', (req, res) => {
-  // Add registration logic here
-  res.send('Register endpoint working');
-});
-
-router.post('/login', (req, res) => {
-  // Add login logic here
-  res.send('Login endpoint working');
-});
+router.post('/register', registerUser);
+router.post('/login', loginUser);
 
 module.exports = router;

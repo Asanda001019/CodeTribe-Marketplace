@@ -16,7 +16,7 @@ app.use('/api/auth', authRoutes);
 
 // Test route to ensure server is running
 app.get('/', (req, res) => {
-  res.send('Server is woking fine!');
+  res.send('Server is woking fine');
 });
 
 // Start the server
