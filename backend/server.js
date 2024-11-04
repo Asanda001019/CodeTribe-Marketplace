@@ -9,7 +9,7 @@ app.use(cors()); // To handle CORS issues
 app.use(express.json()); // To parse JSON request bodies
 
 // Import routes
-const authRoutes = require('./routes/authRoutes.jsx'); // Adjust the path if necessary
+const authRoutes = require('./routes/authRoutes.jsx'); 
 
 // Use routes
 app.use('/api/auth', authRoutes);
