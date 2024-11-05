@@ -1,21 +1,20 @@
-// ProductDetails.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { getAllProducts } from '../ProductService';
+import { useCart } from '../pages/CartContext'; // Import useCart
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const { dispatch } = useCart(); // Get dispatch function from Cart context
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const data = await getAllProducts();
-        console.log("Fetched products:", data); // Log fetched products
-        const selectedProduct = data.find((item) => item.id === id); // No need to convert to Number
-    
-        console.log("Selected product:", selectedProduct); // Log selected product
+        const selectedProduct = data.find((item) => item.id === id);
         setProduct(selectedProduct);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -27,7 +26,11 @@ const ProductDetails = () => {
 
   const handleAddToCart = () => {
     console.log(`Added ${quantity} of ${product.title} to cart`);
-    // Logic to add the product to the cart should be implemented here
+    dispatch({ 
+      type: 'ADD_TO_CART', 
+      payload: { id: product.id, title: product.title, price: product.price, quantity: Number(quantity) } 
+    });
+    navigate('/cart'); // Navigate to the cart page after adding to cart
   };
 
   if (!product) {
