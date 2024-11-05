@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Logo and Description */}
         <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-lg font-semibold text-white">MyShop</h2>
+          <h2 className="text-lg font-semibold text-white">CodeTribe Marketplace</h2>
           <p className="text-sm text-gray-400 mt-1">
             Your go-to place for all your shopping needs!
           </p>
@@ -49,7 +49,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center md:text-right text-gray-400 text-sm">
-          © {new Date().getFullYear()} MyShop. All rights reserved.
+          © {new Date().getFullYear()} CodeTibe 2024. All rights reserved.
         </div>
       </div>
     </footer>

@@ -29,7 +29,7 @@ const Cart = () => {
                 <div>
                   <h3 className="font-semibold">{item.title}</h3>
                   <p>Quantity: {item.quantity}</p>
-                  <p>${item.price} each</p>
+                  <p>R{item.price} each</p>
                 </div>
                 <button onClick={() => handleRemoveFromCart(item.id)} className="text-red-500">Remove</button>
               </li>

@@ -44,7 +44,7 @@ const Checkout = () => {
   return (
     <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
       <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
-      <h3 className="font-bold text-lg mt-4">Total Cost: ${totalCost.toFixed(2)}</h3>
+      <h3 className="font-bold text-lg mt-4">Total Cost: R{totalCost.toFixed(2)}</h3>
       <form onSubmit={handleSubmit}>
         <CardElement className="border p-2 mb-4" />
         <button

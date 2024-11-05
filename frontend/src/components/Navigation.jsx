@@ -13,6 +13,14 @@ const Navigation = () => {
         
         {/* Links */}
         <div className="flex space-x-4">
+
+        <Link to="/register" className="text-gray-300 hover:text-white">
+            Register
+          </Link>
+        <Link to="/login" className="text-gray-300 hover:text-white">
+            Login
+          </Link>
+          
          
           <Link to="/products" className="text-gray-300 hover:text-white">
             Products
@@ -29,12 +37,7 @@ const Navigation = () => {
           <Link to="/rate-us" className="text-gray-300 hover:text-white">
             Rate Us
           </Link>
-          <Link to="/login" className="text-gray-300 hover:text-white">
-            Login
-          </Link>
-          <Link to="/register" className="text-gray-300 hover:text-white">
-            Register
-          </Link>
+        
         </div>
       </div>
     </nav>
