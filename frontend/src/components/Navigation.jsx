@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-white text-lg font-semibold">
-          MyShop
+          CodeTribe 
         </Link>
         
         {/* Links */}
