@@ -1,13 +1,19 @@
 import React from 'react';
 import { useCart } from '../pages/CartContext'; // Import the cart context
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Cart = () => {
   const { cart, dispatch } = useCart();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const totalCost = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const handleRemoveFromCart = (id) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: id });
+  };
+
+  const handleCheckout = () => {
+    navigate('/checkout'); // Navigate to the checkout page
   };
 
   return (
@@ -30,7 +36,7 @@ const Cart = () => {
             ))}
           </ul>
           <h3 className="font-bold text-lg mt-4">Total Cost: ${totalCost.toFixed(2)}</h3>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">
+          <button onClick={handleCheckout} className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">
             Proceed to Checkout
           </button>
         </>

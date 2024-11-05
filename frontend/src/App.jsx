@@ -13,9 +13,17 @@ import RateUs from './pages/RateUs';
 import NoPage from './pages/NoPage';
 import ProductDetails from './pages/ProductDetails';
 
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+
+const stripePromise = loadStripe('pk_test_51QC9RyERBDcUQIctabXh1R89U8A6NWsNAiHDCiivEGWqcE6Ys84iOLkKQMZAkUAjLjKHJqVmdLTnlzhENjInvxyV001aG4mo2D');
+
 function App() {
   return (
+    
     <div className="flex flex-col min-h-screen">
+      <Elements stripe={stripePromise}>
       <Router>
         <Navigation />
         <div className="flex-grow">
@@ -34,6 +42,7 @@ function App() {
         </div>
         <Footer />
       </Router>
+      </Elements>
     </div>
   );
 }
