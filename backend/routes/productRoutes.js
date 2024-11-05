@@ -7,7 +7,7 @@ const {
   updateProduct,
   deleteProduct,
   toggleProductVisibility
-} = require('../controllers/productController.jsx');
+} = require('../controllers/productController');
 
 // Routes
 router.post('/create', createProduct);

@@ -1,4 +1,4 @@
-const admin = require('../config/firebaseConfig.jsx');
+const admin = require('../config/firebaseConfig.js');
 const db = admin.firestore();
 
 // Create a new product

@@ -10,8 +10,8 @@ app.use(cors()); // To handle CORS issues
 app.use(express.json()); // To parse JSON request bodies
 
 // Import routes
-const authRoutes = require('./routes/authRoutes.jsx'); 
-const productRoutes = require('./routes/productRoutes.jsx');
+const authRoutes = require('./routes/authRoutes'); 
+const productRoutes = require('./routes/productRoutes');
 
 
 // Use routes

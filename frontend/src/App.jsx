@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import RateUs from './pages/RateUs';
 import NoPage from './pages/NoPage';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/rate-us" element={<RateUs />} />
             <Route path="*" element={<NoPage />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
         </div>
         <Footer />

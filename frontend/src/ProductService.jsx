@@ -26,14 +26,14 @@ export const getProductById = async (productId) => {
 
 // Function to create a new product
 export const addProduct = async (productData) => {
-  try {
-    const response = await axios.post(API_URL, productData);
-    return response.data;
-  } catch (error) {
-    console.error('Error adding product:', error);
-    throw error;
-  }
-};
+    try {
+      const response = await axios.post(`${API_URL}/create`, productData); // Note the '/create' endpoint
+      return response.data;
+    } catch (error) {
+      console.error('Error adding product:', error);
+      throw error;
+    }
+  };
 
 // Function to update a product
 export const updateProduct = async (productId, updatedData) => {

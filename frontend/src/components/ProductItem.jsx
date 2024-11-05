@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product }) => {
   return (
@@ -7,9 +8,11 @@ const ProductItem = ({ product }) => {
       <h2 className="text-lg font-semibold">{product.title}</h2>
       <p className="text-gray-700">{product.description}</p>
       <p className="font-bold mt-2">${product.price}</p>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">
-        View Details
-      </button>
+      <Link to={`/product/${product.id}`}>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">
+          View Details
+        </button>
+      </Link>
     </div>
   );
 };
