@@ -11,6 +11,7 @@ const {
 
 // Routes
 router.post('/create', createProduct);
+
 router.get('/', getAllProducts);
 router.get('/:id', getProductById);
 router.put('/:id', updateProduct);

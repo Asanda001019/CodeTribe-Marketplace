@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://codetribe-marketplace-9qbd.onrender.com/api/auth';
 
 // Register a new user
 export const registerUser = async (email, password) => {
