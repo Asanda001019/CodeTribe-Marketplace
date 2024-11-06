@@ -1,11 +1,12 @@
-// pages/RateUs.js
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const RateUs = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
   const [comment, setComment] = useState('');
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ const RateUs = () => {
     alert(`Thank you for your feedback! You rated us ${rating} stars.`);
     setRating(0); // Reset rating
     setComment(''); // Reset comment
+    navigate('/'); // Navigate back to the home page after submitting
   };
 
   return (

@@ -35,7 +35,7 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <h3 className="font-bold text-lg mt-4">Total Cost: ${totalCost.toFixed(2)}</h3>
+          <h3 className="font-bold text-lg mt-4">Total Cost: R{totalCost.toFixed(2)}</h3>
           <button onClick={handleCheckout} className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">
             Proceed to Checkout
           </button>

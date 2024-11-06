@@ -1,18 +1,20 @@
+// Login.js
 import React, { useState } from 'react';
-import { loginUser } from './AuthService'; // Adjust path as necessary
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await loginUser(email, password);
-      alert('Successfully logged in!'); // Show success message
-      navigate('/'); // Navigate to a protected route, e.g., dashboard
+      await login(email, password);
+      alert('Successfully logged in!');
+      navigate('/'); // Navigate to home page after successful login
     } catch (error) {
       console.error('Login error:', error);
       alert('Login failed. Please check your credentials and try again.');

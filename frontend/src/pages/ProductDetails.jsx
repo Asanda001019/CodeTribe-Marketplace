@@ -42,7 +42,7 @@ const ProductDetails = () => {
       <img src={product.imageURL} alt={product.title} className="w-full h-48 object-cover mb-4" />
       <h2 className="text-2xl font-semibold mb-2">{product.title}</h2>
       <p className="text-gray-700 mb-4">{product.description}</p>
-      <p className="font-bold text-lg mb-4">${product.price}</p>
+      <p className="font-bold text-lg mb-4">R{product.price}</p>
       <div className="flex items-center mb-4">
         <label className="mr-2">Quantity:</label>
         <input
